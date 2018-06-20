@@ -8,10 +8,14 @@ build:
 # pipeline to store container on Oracle registry
 push-to-releases:
   steps:
-    # Push to public docker repo Container Registry (CR)
+    # Push to oracle registry (ocir)
     - internal/docker-push:
-        tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
-        cmd: node /pipeline/source/app.js
+          username: oci_core_emea_sc_shalter/marcel.pfeifer@oracle.com
+          password: CQO5aeDr}{#lpy[G:kxt
+          tag:  fra.ocir.io/oci_core_emea_sc_shalter/$WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
+          repository: $DOCKER_USERNAME/$WERCKER_APPLICATION_NAME
+          registry: https://fra.ocir.io
+          cmd: node /pipeline/source/app.js
         
 # pipeline to store container on Docker Hub
 push-to-dockerhub:
