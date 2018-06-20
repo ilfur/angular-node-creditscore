@@ -12,7 +12,7 @@ push-to-releases:
     - internal/docker-push:
           username: oci_core_emea_sc_shalter/marcel.pfeifer@oracle.com
           password: CQO5aeDr}{#lpy[G:kxt
-          tag:  fra.ocir.io/oci_core_emea_sc_shalter/$WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
+          tag:  fra.ocir.io/oci_core_emea_sc_shalter//$WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
           repository: $DOCKER_USERNAME/$WERCKER_APPLICATION_NAME
           registry: https://fra.ocir.io
           cmd: node /pipeline/source/app.js
