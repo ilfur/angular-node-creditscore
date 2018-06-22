@@ -12,14 +12,14 @@ push-to-releases:
     - internal/docker-push:
           #username: oci_core_emea_sc_shalter/marcel.pfeifer@oracle.com
           #password: CQO5aeDr}{#lpy[G:kxt
-          username: ilfur
-          password: dea0a4df401bb7afae42d1a59d46e7dc2b41bda1b6ddcf0849d7ca2f5c1a8d52
+          #username: ilfur
+          #password: dea0a4df401bb7afae42d1a59d46e7dc2b41bda1b6ddcf0849d7ca2f5c1a8d52
           #tag:  fra.ocir.io/oci_core_emea_sc_shalter/creditscore/$WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
           tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
           #repository: creditscore
-          repository: ilfur/$WERCKER_APPLICATION_NAME
+          #repository: ilfur/$WERCKER_APPLICATION_NAME
           #registry: https://fra.ocir.io/v2/
-          registry: https://index.docker.io/v2/
+          #registry: https://index.docker.io/v2/
           cmd: node /pipeline/source/app.js
         
 # pipeline to store container on Docker Hub
