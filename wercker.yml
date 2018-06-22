@@ -12,8 +12,8 @@ push-to-releases:
     - internal/docker-push:
           #username: oci_core_emea_sc_shalter/marcel.pfeifer@oracle.com
           #password: CQO5aeDr}{#lpy[G:kxt
-          username: ilfur
-          password: Fenni1111
+          username: $DOCKER_USERNAME
+          password: $DOCKER_PASSWORD
           #password: dea0a4df401bb7afae42d1a59d46e7dc2b41bda1b6ddcf0849d7ca2f5c1a8d52
           #tag:  fra.ocir.io/oci_core_emea_sc_shalter/creditscore/$WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
           tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
