@@ -1,0 +1,75 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: "CreditScore"
+  description: Polls is a simple API allowing consumers to view polls and vote in them.
+  license:
+    name: MIT
+    url: https://github.com/apiaryio/polls-api/blob/master/LICENSE
+host: 130.61.48.168:31538
+basePath: /
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /creditscoreV2:
+    x-summary: Get Credit Score
+    post:
+      description: >-
+        Post name, date of birth and SSN and a Credit Score will be calculated and returned
+      summary: calculate Credit score for Birthdate, SSN, Name
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/scorePost'
+      responses:
+        201:
+          description: ''
+          schema:
+            $ref: '#/definitions/scoreReply'
+          examples:
+            application/json:
+              firstname: Marcel
+              lastname: Boermann
+              dateofbirth: 01-20-1973
+              ssn: 11122333
+              score: 590
+                
+definitions:
+  scorePost:
+    title: Personal Data
+    type: object
+    properties:
+      firstname:
+        type: string
+      lastname:
+        type: string
+      dateofbirth:
+        type: string
+      ssn:
+        type: string
+    required:
+      - firstname
+      - lastname
+      - dateofbirth
+      - ssn
+
+  scoreReply:
+      title: Personal Data plus Credit Score
+      type: object
+      properties:
+        firstname:
+          type: string
+        lastname:
+          type: string
+        dateofbirth:
+          type: string
+        ssn:
+          type: string
+        score:
+          type: integer
